@@ -8,4 +8,64 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = yield
+    .header
+      .header__top
+        .header__top__logo
+          = link_to image_tag("mercari1.png", size: "150x80", alt: "画像が見つかりません"), root_path
+        .header__top__form
+          %span 何かお探しですか？
+          = icon('fa', 'search')
+      .header__bottom
+        .header__bottom__left
+          .header__bottom__left__category
+            .header__bottom__left__category__icon
+              = icon("fa", "bars")
+            %p カテゴリーから探す
+          .header__bottom__left__brand
+            .header__bottom__left__brand__icon
+              = icon("fa", "tag")
+            %p ブランドから探す
+        .header__bottom__right
+          = link_to "新規会員登録", "#", class: "header__bottom__right__signup"
+          = link_to "ログイン", "#", class: "header__bottom__right__signin" 
+
+      = yield
+      .footer
+        .footer__line1
+          %p メルカリについて
+          = link_to "会社概要(運営会社)", "#", class: "footer__line__link"
+          = link_to "採用情報", "#", class: "footer__line__link"
+          = link_to "プレスリリース", "#", class: "footer__line__link"
+          = link_to "公式ブログ", "#", class: "footer__line__link"
+          = link_to "メルカリロゴ利用ガイドライン", "#", class: "footer__line__link"
+          .footer__line1__icon
+            = icon("fab", "twitter")
+            = icon("fab", "facebook-square")
+        .footer__line2
+          %p ヘルプ&ガイド
+          = link_to "メルカリガイド", "#", class: "footer__line__link"
+          = link_to "らくらくメルカリ便", "#", class: "footer__line__link"
+          = link_to "ゆうゆうメルカリ便", "#", class: "footer__line__link"
+          = link_to "梱包・発送たのメル便", "#", class: "footer__line__link"
+          = link_to "車体取引ガイド", "#", class: "footer__line__link"
+          = link_to "メルカリあんしん・あんぜん宣言!", "#", class: "footer__line__link"
+          = link_to "偽ブランド品撲滅への取り組み", "#", class: "footer__line__link"
+          = link_to "メルカリボックス", "#", class: "footer__line__link"
+          = link_to "スマホ出品・売却相場", "#", class: "footer__line__link"
+        .footer__line3and4
+          %p プライバシーと利用規約
+          .footer__line3and4__link
+            .footer__line3
+              = link_to "プライバシーポリシー", "#", class: "footer__line__link"
+              = link_to "メルカリ利用規約", "#", class: "footer__line__link"
+              = link_to "あんしんスマホサポート制度に関する利用特約", "#", class: "footer__line__link"
+              = link_to "コンプライアンスポリシー", "#", class: "footer__line__link"
+            .footer__line4
+              = link_to "個人データの安全管理に係る基本方針", "#", class: "footer__line__link"
+              = link_to "特定商取引に関する表記", "#", class: "footer__line__link"
+              = link_to "資金決済法に基づく表示", "#", class: "footer__line__link"
+              = link_to "法令遵守と犯罪抑止のために", "#", class: "footer__line__link"
+        .footer__line5
+          %p 国
+          = link_to "日本", "#", class: "footer__line__link"
+          = link_to "United States", "#", class: "footer__line__link"

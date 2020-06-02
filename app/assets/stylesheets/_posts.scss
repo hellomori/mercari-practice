@@ -1,0 +1,105 @@
+@mixin line {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin-right: 30px;
+  & a {
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    opacity: 0.7;
+  }
+  & p {
+    font-weight: bold;
+  }
+}
+
+.header {
+  width: 100%;
+  &__top {
+    display: flex;
+    justify-content: center;
+    &__logo {
+      margin-right: 30px;
+    }
+    &__form {
+      width: 30%;
+    }
+  }
+  &__bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    &__left {
+      display: flex;
+      &__category {
+        display: flex;
+        align-items: center;
+      }
+      &__brand {
+        display: flex;
+        align-items: center;
+        margin-left: 30px;
+      }
+    }
+    &__right {
+      display: flex;
+      align-items: center;
+      &__signup {
+        color: white;
+        background-color: #ea352d;
+        padding: 6px 8px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+      &__signin {
+        color: #0095ee;
+        border: 1px solid #0095ee;
+        padding: 6px 8px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 14px;
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+
+.footer {
+  background-color: rgb(34, 34, 34);
+  width: 100%;
+  height: 400px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  &__line1 {
+    @include line;
+    margin-right: 30px;
+  }
+  &__line2 {
+    @include line;
+  }
+  &__line3and4 {
+    width: 400px;
+    & p {
+      font-weight: bold;
+    }
+    &__link {
+      display: flex;
+    }
+  }
+  &__line3 {
+    @include line;
+  }
+  &__line4 {
+    @include line;
+  }
+  &__line5 {
+    @include line;
+  }
+  &__line__link {
+    margin-bottom: 15px;
+  }
+}
